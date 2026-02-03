@@ -1,0 +1,8 @@
+exercice 1:
+	a- Gérer les consultations et les Interventions de Patients
+	b- prenom, nom, dateNaissance, descriptionConditionsPhysique
+	c- pour ne pas donner trop de mémoire à une information qui n'a pas besoins d'être aussi precise
+	d- On a déjà accès à la date de naissance du patient qu'on peut utiliser pour extraire l'âge, donc la noté au moment de l'intervention serrait redondants 
+	e- avec la fonction LierIntervention(intervention: Intervention)
+	f- en ajoutant un attribut durée 
+	g- oui
