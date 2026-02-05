@@ -9,9 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const electron_1 = require("electron");
 //Importer le module path de Node.js. Pour manipuler les fichiers et charger les pages Web dans la fenêtre
 const path_1 = __importDefault(require("path"));
+let win = null;
+let childWindow = null;
 const createWindow = () => {
     //Instanciation de la fenêtre
-    const win = new electron_1.BrowserWindow({
+    win = new electron_1.BrowserWindow({
         width: 800,
         height: 600,
         minHeight: 500,
@@ -38,5 +40,39 @@ const createWindow = () => {
 };
 //Lorsque l'environnement est prêt
 electron_1.app.whenReady().then(() => {
-    createWindow();
+    //Instanciation de la fenêtre splash
+    const splash = new electron_1.BrowserWindow({
+        width: 400,
+        height: 300,
+        frame: false,
+        transparent: true,
+        alwaysOnTop: true
+    });
+    //Chargement du fichier HTML dans la fenêtre
+    splash.loadFile(path_1.default.join(__dirname, "../splash.html"));
+    setTimeout(() => {
+        splash.close(); //Fermer la fenêtre splash après 5 secondes
+        createWindow(); //Ouverture de la fenêtre principale
+        //Fenêtre enfant 
+        if (win) {
+            childWindow = new electron_1.BrowserWindow({
+                width: 400,
+                height: 300,
+                title: 'Fenêtre enfant',
+                parent: win, // Indiquer la fenêtre parent 
+                modal: true, // Fenêtre modale: impossible d'utiliser les autres fenêtre quand elle est ouverte
+                show: false,
+                webPreferences: {
+                    nodeIntegration: true,
+                },
+            });
+            childWindow.loadURL('data:text/html,<head><meta charset="UTF-8"></head><body><h2>fenêtre modale</h2><p>ceci est un fenêtre modal</p></body>');
+            childWindow.once('ready-to-show', () => {
+                if (childWindow) {
+                    childWindow.show();
+                }
+            });
+        }
+        createWindow();
+    }, 5000);
 });

@@ -1,23 +1,26 @@
 // app: représente l'app Electron. Gère le cycle de vie de l'app: démarrage, ouverture de la fenêtre, fermeture, état (app.whenReady())
 //BrowserWindow: classe qui créée la fenêtre native dans laquelle sera chargée la page Web
 //naticeImage et Tray pour afficher une icône 
-import {app, BrowserWindow, nativeImage, Tray} from 'electron'
+import { app, BrowserWindow, nativeImage, Tray } from 'electron'
 
 //Importer le module path de Node.js. Pour manipuler les fichiers et charger les pages Web dans la fenêtre
 import path from 'path'
 
+let win: BrowserWindow | null = null
+let childWindow: BrowserWindow | null = null
+
 const createWindow = () => {
 
     //Instanciation de la fenêtre
-    const win = new BrowserWindow(
+    win = new BrowserWindow(
         {
             width: 800,
             height: 600,
 
-            minHeight:500,
-            minWidth:500,
+            minHeight: 500,
+            minWidth: 500,
 
-            maxWidth:1200,
+            maxWidth: 1200,
             maxHeight: 650,
 
             resizable: true, // false si on veut empêcher le redimentionnement de la fenêtre par l'utilisateur 
@@ -26,11 +29,11 @@ const createWindow = () => {
 
             frame: true, //false supprime 
 
-            backgroundColor: "rgba(82, 82, 82, 0.69)", 
+            backgroundColor: "rgba(82, 82, 82, 0.69)",
 
-            icon: path.join(__dirname,'assets/pomme.ico'),
+            icon: path.join(__dirname, 'assets/pomme.ico'),
 
-            webPreferences:{
+            webPreferences: {
                 //true pour le moment, mais un peu risqué car on autorise l'accès aux API Node.js dans les page Web
                 nodeIntegration: true
             }
@@ -48,6 +51,52 @@ const createWindow = () => {
 }
 
 //Lorsque l'environnement est prêt
-app.whenReady().then(()=>{
-    createWindow()
+app.whenReady().then(() => {
+
+
+    //Instanciation de la fenêtre splash
+    const splash = new BrowserWindow({
+        width: 400,
+        height: 300,
+        frame: false,
+        transparent: true,
+        alwaysOnTop: true
+    })
+
+    //Chargement du fichier HTML dans la fenêtre
+    splash.loadFile(path.join(__dirname, "../splash.html"))
+
+    setTimeout(() => {
+
+        splash.close(); //Fermer la fenêtre splash après 5 secondes
+
+        createWindow(); //Ouverture de la fenêtre principale
+
+        //Fenêtre enfant 
+
+        if(win){
+            childWindow = new BrowserWindow({
+                width: 400,
+                height: 300,
+                title:'Fenêtre enfant',
+                parent: win,// Indiquer la fenêtre parent 
+                modal: true,// Fenêtre modale: impossible d'utiliser les autres fenêtre quand elle est ouverte
+                show:false,
+                webPreferences:{
+                    nodeIntegration: true,
+                },
+            })
+
+            childWindow.loadURL('data:text/html,<head><meta charset="UTF-8"></head><body><h2>fenêtre modale</h2><p>ceci est un fenêtre modal</p></body>')
+
+            childWindow.once('ready-to-show',()=>{
+                if(childWindow){
+                    childWindow.show();
+                }
+            })
+        }
+
+
+        createWindow()
+    }, 5000)
 })
