@@ -10,6 +10,7 @@
 *.userosscache
 *.sln.docstates
 *.env
+electron\labo02\code\node_modules
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
