@@ -25,12 +25,3 @@ taskButton.addEventListener('click', () => {
 window.electronAPI.onTaskResult(result => {
     resultElement.textContent = `Résultat de la tâche: ${JSON.stringify(result)}`;
 });
-//Exemple c: calculatrice
-document.getElementById("add").addEventListener("click", async () => {
-    const a = parseInt(document.getElementById('a').value, 10);
-    console.log("Valeur de a: " + a);
-    const b = parseInt(document.getElementById('b').value, 10);
-    console.log("Valeur de b: " + b);
-    const somme = await window.electronAPI.calculate(a, b);
-    console.log("Résultat: ")(document.getElementById("result")).value = "Résultat: " + somme;
-});
