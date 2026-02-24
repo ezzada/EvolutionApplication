@@ -34,23 +34,23 @@
                     </v-window-item>
 
                     <v-window-item value="form"`>
-                        <DashBoardExample v-if="tab === 'form'"/>
+                        <FormExample v-if="tab === 'form'"/>
                     </v-window-item>
 
                     <v-window-item value="vdatatable"`>
-                        <DashBoardExample v-if="tab === 'vdatatable'"/>
+                        <DataTableExample v-if="tab === 'vdatatable'"/>
                     </v-window-item>
                     
                     <v-window-item value="todo"`>
-                        <DashBoardExample v-if="tab === 'todo'"/>
+                        <TodoExample v-if="tab === 'todo'"/>
                     </v-window-item>
                     
                     <v-window-item value="profile"`>
-                        <DashBoardExample v-if="tab === 'profile'"/>
+                        <ProfileExample v-if="tab === 'profile'"/>
                     </v-window-item>
                     
                     <v-window-item value="loadfile"`>
-                        <DashBoardExample v-if="tab === 'loadfile'"/>
+                        <ChargerFichier v-if="tab === 'loadfile'"/>
                     </v-window-item>
                  </v-window>
             </v-container>
@@ -66,6 +66,7 @@ import DataTableExample from './DataTableExample.vue';
 import TodoExample from './TodoExample.vue';
 import ProfileExample from './ProfileExample.vue';
 import ChargerFichier from './ChargerFichier.vue';
+
 const drawer = ref(false)
 
 function openAccueil(){
@@ -73,6 +74,7 @@ function openAccueil(){
 }
 
 const tab = ref('dashboard')
+
 // export default {
 //     methods: {
 //         openFormWindow() {

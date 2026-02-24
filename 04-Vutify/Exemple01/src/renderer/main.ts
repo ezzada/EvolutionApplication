@@ -1,5 +1,6 @@
 import { createApp } from "vue";
 import App from './App.vue';
+import { createPinia } from 'pinia' // Pour créer un store pinia permettant la gestion des données saisie dans un formulaire
 
 import router from './router'; // Importation du routeur pour la navigation entre les pages
 
@@ -9,6 +10,7 @@ import { createVuetify } from "vuetify";
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css'
+
 
 // Créer une instance Vuetify
 const vuetify = createVuetify({
@@ -35,8 +37,12 @@ declare global {
 
 
 const app = createApp(App); // Création de l'application Vue.js avec le composant principal App
+
+const pinia = createPinia() // utilisation de pinia
+
+app.use(pinia)
 app.use(router); // Utilisation du routeur pour la navigation entre les pages
-app.use(vuetify);
+app.use(vuetify); //Utilisation de vutify
 app.mount('#app'); // Montage de l'application sur l'élément DOM avec l'ID 'app'
 
 
