@@ -8,6 +8,7 @@ export const useParticipantStore = defineStore('participant', () => {
     const participants = ref<Participant[]>([]);
     const isLoading = ref(false);
     const error = ref<string | null>(null);
+    const selectedParticipant = ref<Participant | null>(null)
     
     // getters
     
@@ -78,6 +79,14 @@ export const useParticipantStore = defineStore('participant', () => {
             isLoading.value = false
         }
     }
+    function selectParticipant(participant: Participant){
+        selectedParticipant.value = {...participant}
+    }
+
+    
+    function clearSelectedParticipant(){
+        selectedParticipant.value  = null
+    }
 
     // Fonction pour écouter les notifications IPC pour les changements (depuis d'autres fenêtres)
     function setupIpcListeners(){
@@ -90,6 +99,18 @@ export const useParticipantStore = defineStore('participant', () => {
                 participants.value.push(participant)
                 console.log('Participant ajouté via IPC: ', participant)
             }
+        })
+
+        //Écouter quand un participant est modifié depuis la fenêtre de modification
+        window.api.on('participant-modifer', (event: any, updatedParticipant: Participant) =>{
+            //Trouver et MAJ le participant dans la liste locale
+            const index = participants.value.findIndex(p => p.matricule === updatedParticipant.matricule)
+
+            if(index !== -1){
+                participants.value[index] = updatedParticipant
+                console.log('Participant modifié via IPC', updatedParticipant)
+            }
+
         })
     }
 
@@ -128,6 +149,7 @@ export const useParticipantStore = defineStore('participant', () => {
         participants,
         isLoading,
         error,
+        selectedParticipant,
         // Getters
         participantsActifs,
         participantParMatricule,
@@ -138,7 +160,9 @@ export const useParticipantStore = defineStore('participant', () => {
         resetState,
         ajouterParticipant,
         setupIpcListeners,
-        supprimerParticipant
+        supprimerParticipant,
+        selectParticipant,
+        clearSelectedParticipant,
     }
 
 });

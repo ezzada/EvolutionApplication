@@ -20,8 +20,8 @@ export class ParticipantService {
             const participants = JSON.parse(data);
 
             return participants.map((p: any) => new Participant(p));
-        }catch(error: any){
-            if(error.code === 'ENOENT') {
+        } catch (error: any) {
+            if (error.code === 'ENOENT') {
                 console.warn(`Fichier ${this.participantsFilePath} introuvable, retour d'un tableau vide`);
                 return [];
             }
@@ -49,23 +49,37 @@ export class ParticipantService {
         await this.ecrireParticipants(participants);
     }
 
-    private async ecrireParticipants(participants: Participant[]) : Promise<void>{
+    private async ecrireParticipants(participants: Participant[]): Promise<void> {
         const jsonData = JSON.stringify(participants, null, 2);
         await fs.writeFile(this.participantsFilePath, jsonData, 'utf-8');
     }
 
     // Supprimer un participant sélectionné dans le v-data-table
-    public async supprimerParticipant(matricule:number): Promise<void> {
+    public async supprimerParticipant(matricule: number): Promise<void> {
 
         const participants = await this.lireParticipants();
-        const index = participants.findIndex(p=> p.matricule === matricule)
+        const index = participants.findIndex(p => p.matricule === matricule)
 
-        if(index!==-1)
-        {
+        if (index !== -1) {
             participants.splice(index, 1); // Suuprimer un élément du tableau à partir de index
             await this.ecrireParticipants(participants);
         } else {
             throw new Error(`Participant avec matricule ${matricule} introuvable`);
         }
     }
+
+    public async modifierParticipant(updated: Partial<Participant>): Promise<void> {
+
+        const participants = await this.lireParticipants()
+
+        const index = participants.findIndex(p => p.matricule === updated.matricule)
+        if (index !== -1) {
+            participants[index] = { ...participants[index], ...updated}
+            await this.ecrireParticipants(participants);
+        } else {
+            throw new Error(`Participant avec matricule ${updated.matricule} introuvable`)
+        }
+    }
+
+
 }

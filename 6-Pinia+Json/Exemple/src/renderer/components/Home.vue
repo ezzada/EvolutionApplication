@@ -13,12 +13,15 @@
        <v-list>
          <v-list-item title="Ajouter" prepend-icon="mdi-plus" @click="ouvrirAjouterParticipant"></v-list-item>
          <v-list-item title="Supprimer" prepend-icon="mdi-delete" @click="supprimerParticipant"></v-list-item>
+         <v-list-item title="Modifier" prepend-icon="mdi-pencil" @click="ouvrirModifierParticipant"></v-list-item>
+    
+
        </v-list>
     </v-navigation-drawer> 
 
     <v-main>
       <v-container>
-        <v-data-table :items="participants" :headers="headers" item-value="matricule" class="lignes-alternance" show-expand
+        <v-data-table v-model:items="participants" :headers="headers" item-value="matricule" class="lignes-alternance" show-expand
         @click:row="(event: MouseEvent, row: {item: Participant}) => handleRowClick(row.item)">
 
           <!-- Afficher la colonne Niveau sous forme d'une liste déroulante désactivée -->
@@ -73,6 +76,23 @@ function ouvrirAjouterParticipant() {
   window.api.send('ajouter-participant', "Ajouter un participant");
 }
 
+function ouvrirModifierParticipant() {
+  if (selectedParticipant.value) {
+    
+    // Convertir en objet plain (non-réactif) avant d'envoyer les données via IPC
+    // parse et stringify on créé une copie sérialisable
+    const participantPlain = JSON.parse(JSON.stringify(selectedParticipant.value))
+
+    window.api.send('modifier-participant', participantPlain)
+  } else {
+    window.api.showMessageBox({
+      type: "warning",
+      title: "Aucun participant sélectionné",
+      message: "Veuillez sélectionner un participant à modifier dans le tableau.",
+    });
+  }
+}
+
 const store = useParticipantStore();
 
 const headers = ref([
@@ -96,6 +116,7 @@ onMounted( async() => {
 function handleRowClick(item: Participant){
   console.log('Ligne sélectionnée: Nom: ', item.nom, ", Prénom: ", item.prenom);
   selectedParticipant.value = item;
+  store.selectParticipant(item)
 }
 
 async function supprimerParticipant(){

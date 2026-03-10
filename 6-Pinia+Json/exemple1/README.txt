@@ -1,1 +1,0 @@
-Ceci est le Template pour une application Electron, contient les configurations pour Electron-Vite, Vuetify, Router et Pinia.
