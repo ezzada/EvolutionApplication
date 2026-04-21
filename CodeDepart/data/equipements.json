@@ -1,0 +1,452 @@
+[
+  {
+    "id": 101,
+    "marque": "Dell",
+    "modele": "XPS 15",
+    "categorie": "Ordinateur",
+    "etat": "Neuf",
+    "emplacement": "Bureau 402",
+    "estSousGarantie": true
+  },
+  {
+    "id": 102,
+    "marque": "HP",
+    "modele": "EliteBook 840",
+    "categorie": "Ordinateur",
+    "etat": "Bon",
+    "emplacement": "Bureau 101",
+    "estSousGarantie": false
+  },
+  {
+    "id": 103,
+    "marque": "Lenovo",
+    "modele": "ThinkPad X1",
+    "categorie": "Ordinateur",
+    "etat": "Neuf",
+    "emplacement": "Bureau 203",
+    "estSousGarantie": true
+  },
+  {
+    "id": 104,
+    "marque": "Apple",
+    "modele": "MacBook Pro",
+    "categorie": "Ordinateur",
+    "etat": "Bon",
+    "emplacement": "Bureau 305",
+    "estSousGarantie": false
+  },
+  {
+    "id": 105,
+    "marque": "Asus",
+    "modele": "ZenBook 14",
+    "categorie": "Ordinateur",
+    "etat": "Neuf",
+    "emplacement": "Bureau 210",
+    "estSousGarantie": true
+  },
+  {
+    "id": 106,
+    "marque": "Acer",
+    "modele": "Aspire 5",
+    "categorie": "Ordinateur",
+    "etat": "Usagé",
+    "emplacement": "Bureau 110",
+    "estSousGarantie": false
+  },
+  {
+    "id": 107,
+    "marque": "Microsoft",
+    "modele": "Surface Laptop 5",
+    "categorie": "Ordinateur",
+    "etat": "Neuf",
+    "emplacement": "Bureau 415",
+    "estSousGarantie": true
+  },
+  {
+    "id": 108,
+    "marque": "Samsung",
+    "modele": "Galaxy Book",
+    "categorie": "Ordinateur",
+    "etat": "Bon",
+    "emplacement": "Bureau 220",
+    "estSousGarantie": false
+  },
+  {
+    "id": 109,
+    "marque": "MSI",
+    "modele": "GF63 Thin",
+    "categorie": "Ordinateur",
+    "etat": "Neuf",
+    "emplacement": "Bureau 312",
+    "estSousGarantie": true
+  },
+  {
+    "id": 110,
+    "marque": "Razer",
+    "modele": "Blade 15",
+    "categorie": "Ordinateur",
+    "etat": "Bon",
+    "emplacement": "Bureau 118",
+    "estSousGarantie": false
+  },
+  {
+    "id": 111,
+    "marque": "Logitech",
+    "modele": "MX Master 3",
+    "categorie": "Périphérique",
+    "etat": "Neuf",
+    "emplacement": "Bureau 402",
+    "estSousGarantie": true
+  },
+  {
+    "id": 112,
+    "marque": "HP",
+    "modele": "LaserJet Pro",
+    "categorie": "Périphérique",
+    "etat": "Bon",
+    "emplacement": "Salle 1",
+    "estSousGarantie": false
+  },
+  {
+    "id": 113,
+    "marque": "Dell",
+    "modele": "UltraSharp U2720Q",
+    "categorie": "Périphérique",
+    "etat": "Neuf",
+    "emplacement": "Bureau 203",
+    "estSousGarantie": true
+  },
+  {
+    "id": 114,
+    "marque": "Canon",
+    "modele": "Pixma G6020",
+    "categorie": "Périphérique",
+    "etat": "Usagé",
+    "emplacement": "Salle 2",
+    "estSousGarantie": false
+  },
+  {
+    "id": 115,
+    "marque": "Epson",
+    "modele": "EcoTank ET-2850",
+    "categorie": "Périphérique",
+    "etat": "Bon",
+    "emplacement": "Salle 3",
+    "estSousGarantie": true
+  },
+  {
+    "id": 116,
+    "marque": "Razer",
+    "modele": "BlackWidow",
+    "categorie": "Périphérique",
+    "etat": "Neuf",
+    "emplacement": "Bureau 210",
+    "estSousGarantie": true
+  },
+  {
+    "id": 117,
+    "marque": "Corsair",
+    "modele": "K95 RGB",
+    "categorie": "Périphérique",
+    "etat": "Bon",
+    "emplacement": "Bureau 110",
+    "estSousGarantie": false
+  },
+  {
+    "id": 118,
+    "marque": "SteelSeries",
+    "modele": "Arctis 7",
+    "categorie": "Périphérique",
+    "etat": "Neuf",
+    "emplacement": "Bureau 415",
+    "estSousGarantie": true
+  },
+  {
+    "id": 119,
+    "marque": "Logitech",
+    "modele": "C920 Webcam",
+    "categorie": "Périphérique",
+    "etat": "Bon",
+    "emplacement": "Bureau 220",
+    "estSousGarantie": false
+  },
+  {
+    "id": 120,
+    "marque": "BenQ",
+    "modele": "GW2480",
+    "categorie": "Périphérique",
+    "etat": "Neuf",
+    "emplacement": "Bureau 312",
+    "estSousGarantie": true
+  },
+  {
+    "id": 121,
+    "marque": "Cisco",
+    "modele": "RV340",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Salle Serveur",
+    "estSousGarantie": true
+  },
+  {
+    "id": 122,
+    "marque": "TP-Link",
+    "modele": "Archer AX50",
+    "categorie": "Réseau",
+    "etat": "Bon",
+    "emplacement": "Bureau 101",
+    "estSousGarantie": false
+  },
+  {
+    "id": 123,
+    "marque": "Netgear",
+    "modele": "Nighthawk R7000",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Bureau 203",
+    "estSousGarantie": true
+  },
+  {
+    "id": 124,
+    "marque": "Ubiquiti",
+    "modele": "UniFi AP AC Lite",
+    "categorie": "Réseau",
+    "etat": "Bon",
+    "emplacement": "Couloir 2",
+    "estSousGarantie": false
+  },
+  {
+    "id": 125,
+    "marque": "D-Link",
+    "modele": "DIR-867",
+    "categorie": "Réseau",
+    "etat": "Usagé",
+    "emplacement": "Bureau 305",
+    "estSousGarantie": false
+  },
+  {
+    "id": 126,
+    "marque": "Cisco",
+    "modele": "Catalyst 2960",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Salle Serveur",
+    "estSousGarantie": true
+  },
+  {
+    "id": 127,
+    "marque": "TP-Link",
+    "modele": "TL-SG108",
+    "categorie": "Réseau",
+    "etat": "Bon",
+    "emplacement": "Bureau 210",
+    "estSousGarantie": false
+  },
+  {
+    "id": 128,
+    "marque": "Netgear",
+    "modele": "GS308",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Bureau 110",
+    "estSousGarantie": true
+  },
+  {
+    "id": 129,
+    "marque": "Ubiquiti",
+    "modele": "EdgeRouter X",
+    "categorie": "Réseau",
+    "etat": "Bon",
+    "emplacement": "Salle Serveur",
+    "estSousGarantie": false
+  },
+  {
+    "id": 130,
+    "marque": "MikroTik",
+    "modele": "hEX RB750",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Bureau 118",
+    "estSousGarantie": true
+  },
+  {
+    "id": 131,
+    "marque": "Dell",
+    "modele": "OptiPlex 7090",
+    "categorie": "Ordinateur",
+    "etat": "Neuf",
+    "emplacement": "Bureau 402",
+    "estSousGarantie": true
+  },
+  {
+    "id": 132,
+    "marque": "HP",
+    "modele": "ProDesk 600",
+    "categorie": "Ordinateur",
+    "etat": "Bon",
+    "emplacement": "Bureau 101",
+    "estSousGarantie": false
+  },
+  {
+    "id": 133,
+    "marque": "Lenovo",
+    "modele": "IdeaCentre 5",
+    "categorie": "Ordinateur",
+    "etat": "Usagé",
+    "emplacement": "Bureau 203",
+    "estSousGarantie": false
+  },
+  {
+    "id": 134,
+    "marque": "Apple",
+    "modele": "iMac 24",
+    "categorie": "Ordinateur",
+    "etat": "Neuf",
+    "emplacement": "Bureau 305",
+    "estSousGarantie": true
+  },
+  {
+    "id": 135,
+    "marque": "Asus",
+    "modele": "ROG Strix",
+    "categorie": "Ordinateur",
+    "etat": "Bon",
+    "emplacement": "Bureau 210",
+    "estSousGarantie": false
+  },
+  {
+    "id": 136,
+    "marque": "Logitech",
+    "modele": "MX Keys",
+    "categorie": "Périphérique",
+    "etat": "Neuf",
+    "emplacement": "Bureau 110",
+    "estSousGarantie": true
+  },
+  {
+    "id": 137,
+    "marque": "HP",
+    "modele": "DeskJet 3755",
+    "categorie": "Périphérique",
+    "etat": "Usagé",
+    "emplacement": "Salle 1",
+    "estSousGarantie": false
+  },
+  {
+    "id": 138,
+    "marque": "Dell",
+    "modele": "P2419H",
+    "categorie": "Périphérique",
+    "etat": "Bon",
+    "emplacement": "Bureau 415",
+    "estSousGarantie": false
+  },
+  {
+    "id": 139,
+    "marque": "Canon",
+    "modele": "imageCLASS MF445dw",
+    "categorie": "Périphérique",
+    "etat": "Neuf",
+    "emplacement": "Salle 2",
+    "estSousGarantie": true
+  },
+  {
+    "id": 140,
+    "marque": "Epson",
+    "modele": "WorkForce WF-2830",
+    "categorie": "Périphérique",
+    "etat": "Bon",
+    "emplacement": "Salle 3",
+    "estSousGarantie": false
+  },
+  {
+    "id": 141,
+    "marque": "Cisco",
+    "modele": "ISR 4321",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Salle Serveur",
+    "estSousGarantie": true
+  },
+  {
+    "id": 142,
+    "marque": "TP-Link",
+    "modele": "Deco M5",
+    "categorie": "Réseau",
+    "etat": "Bon",
+    "emplacement": "Bureau 101",
+    "estSousGarantie": false
+  },
+  {
+    "id": 143,
+    "marque": "Netgear",
+    "modele": "Orbi RBK50",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Bureau 203",
+    "estSousGarantie": true
+  },
+  {
+    "id": 144,
+    "marque": "Ubiquiti",
+    "modele": "UniFi Dream Machine",
+    "categorie": "Réseau",
+    "etat": "Bon",
+    "emplacement": "Salle Serveur",
+    "estSousGarantie": false
+  },
+  {
+    "id": 145,
+    "marque": "D-Link",
+    "modele": "DGS-1008A",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Bureau 305",
+    "estSousGarantie": true
+  },
+  {
+    "id": 146,
+    "marque": "MikroTik",
+    "modele": "CCR1009",
+    "categorie": "Réseau",
+    "etat": "Bon",
+    "emplacement": "Salle Serveur",
+    "estSousGarantie": false
+  },
+  {
+    "id": 147,
+    "marque": "Cisco",
+    "modele": "Meraki MX64",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Salle Serveur",
+    "estSousGarantie": true
+  },
+  {
+    "id": 148,
+    "marque": "TP-Link",
+    "modele": "TL-WR940N",
+    "categorie": "Réseau",
+    "etat": "Usagé",
+    "emplacement": "Bureau 210",
+    "estSousGarantie": false
+  },
+  {
+    "id": 149,
+    "marque": "Netgear",
+    "modele": "EX3700",
+    "categorie": "Réseau",
+    "etat": "Bon",
+    "emplacement": "Couloir 1",
+    "estSousGarantie": false
+  },
+  {
+    "id": 150,
+    "marque": "Ubiquiti",
+    "modele": "NanoStation M5",
+    "categorie": "Réseau",
+    "etat": "Neuf",
+    "emplacement": "Toit",
+    "estSousGarantie": true
+  }
+]
